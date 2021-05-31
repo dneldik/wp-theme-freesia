@@ -1,0 +1,31 @@
+{
+  "name": "freesia",
+  "version": "1.0.0",
+  "description": "Simple and light wordpress theme.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserslist": [
+    "last 2 versions or > 5%"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dneldik/wp-theme-freesia.git"
+  },
+  "author": "dneldik",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/dneldik/wp-theme-freesia/issues"
+  },
+  "homepage": "https://github.com/dneldik/wp-theme-freesia#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {}
+}
