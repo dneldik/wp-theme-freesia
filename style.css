@@ -1,0 +1,44 @@
+/*
+Theme Name: Freesia
+Theme URI: https://github.com/dneldik/wp-theme-freesia
+Author: dneldik
+Author URI: https://github.com/dneldik
+Description: Simple and light wordpress theme.
+Tags: organisation-web-page
+Version: 0.1
+Requires at least: 5.0
+Tested up to: 8.0.3
+Requires PHP: 7.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+html,
+body,
+header,
+footer,
+nav,
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+header,
+footer,
+nav {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
