@@ -20,7 +20,8 @@ body,
 header,
 footer,
 nav,
-div {
+div,
+ul {
   margin: 0;
   padding: 0;
   border: 0;

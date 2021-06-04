@@ -1,0 +1,55 @@
+/**
+ * Freesia - simple and light Wordpress theme.
+ * Copyright (C) 2021 dneldik
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ * Contact me: dneldik@gmail.com
+ *
+ * ---
+ * The main stylesheet file
+ *
+ * Media Query breakpoints
+ *
+ * <  480px
+ * >= 480px
+ * >= 600px
+ * >= 768px
+ * >= 1024px
+ */
+body {
+  padding-top: 120px; }
+
+#main-header {
+  width: 100%;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f8f8f8;
+  position: fixed;
+  top: 0;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); }
+
+#main-footer {
+  width: 100%;
+  min-height: 200px;
+  background-color: #5b5f66; }

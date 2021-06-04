@@ -31,6 +31,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory') ?>/'style.css'">
+  <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory') ?>/assets/css/'main.css'">
 
   <title><?php bloginfo('name') ?></title>
 
@@ -38,8 +39,20 @@
 
 </head>
 <body>
-  <header>
-    <h1>Freesia</h1>
+  <header id="main-header">
+    <h1>
+      <?php bloginfo('name') ?>
+    </h1>
+    <?php
+      wp_nav_menu([
+        'theme_location'        => 'primary_nav',
+        'menu_id'               => 'main-nav',
+        'menu_class'            => 'menu',
+        'container'             => 'nav',
+        'container_class'       => 'menu-wrapper',
+        'container_aria_label'  => '' //todo: place here some aria label
+      ])
+    ?>
   </header>
 
   <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
@@ -50,7 +63,7 @@
     <p>there is empty here</p>
   <?php endif; ?>
 
-  <footer>
+  <footer id="main-footer">
     <?php wp_footer() ?>
   </footer>
   
