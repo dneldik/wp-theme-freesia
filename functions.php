@@ -56,3 +56,18 @@ if (!function_exists('freesia_setup')):
 endif;
 
 add_action('after_setup_theme', 'freesia_setup');
+
+/**
+ * Enqueue scripts and styles.
+ */
+function freesia_scripts() {
+  $handle = 'navigation.js';
+  $src = get_template_directory_uri() . '/assets/js/navigation.js';
+  $deps = false;
+  $ver = null;
+  $in_footer = true;
+
+  wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
+}
+
+add_action( 'wp_enqueue_scripts', 'freesia_scripts' );
