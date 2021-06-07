@@ -15,19 +15,26 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+html {
+  font-size: 16px;
+}
+
 html,
 body,
 header,
 footer,
 nav,
 div,
-ul {
+h1,
+ul,
+button {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 header,

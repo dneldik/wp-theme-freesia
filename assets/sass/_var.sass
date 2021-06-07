@@ -1,4 +1,3 @@
-<?php
 /**
  * Freesia - simple and light Wordpress theme.
  * Copyright (C) 2021 dneldik
@@ -19,40 +18,16 @@
  * Contact me: dneldik@gmail.com
  * 
  * ---
- * Theme functions file 
+ * Variable file for all style sheets
  */
 
-if (!function_exists('freesia_setup')):
+// Variables:
+$header-color: #f8f8f8
+$footer-color: #5b5f66
+$hamburger-color: #3a3c3f
 
-  function freesia_setup() {
+$header-height: 120px
 
-    /**
-     * Add custom logo
-     */
-    $logo_width  = 300;
-		$logo_height = 100;
+$header-font: arial
 
-		add_theme_support(
-			'custom-logo',
-			[
-				'height'               => $logo_height,
-				'width'                => $logo_width,
-				'flex-width'           => true,
-				'flex-height'          => true,
-				'unlink-homepage-logo' => true,
-      ]
-		);
-
-    /**
-     * Add nav menus
-     */
-    register_nav_menus([
-      'primary_nav' => 'Primary navigation',
-      'footer_nav' => 'Footer navigation'
-    ]);
-
-  }
-  
-endif;
-
-add_action('after_setup_theme', 'freesia_setup');
+$menu-animation-delay: 0.3s

@@ -28,28 +28,96 @@
  * >= 768px
  * >= 1024px
  */
-
-// Variables:
-$header-color: #f8f8f8
-$footer-color: #5b5f66
-
-$footer-height: 120px
+@import '_var'
+@import '_hamburger'
 
 body
-  padding-top: $footer-height
+  padding-top: $header-height
 
 #main-header
   width: 100%
-  height: $footer-height
+  height: $header-height
+  position: fixed
+  top: 0
   display: flex
   justify-content: space-between
   align-items: center
   background-color: $header-color
-  position: fixed
-  top: 0
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5)
+
+#title-logo-wrapper
+  height: 100%
+  display: flex
+  align-items: center
+  h1
+    display: inline-block
+    font-family: $header-font
+    font-size: 2em
+    margin: 0 10px
+  span
+    display: none
+    height: 100%
+    img
+      width: auto
+      height: 100%
+
+#mobile-menu-wrapper
+  position: absolute
+  top: $header-height + 10px
+  width: 100%
+  overflow: auto
+  transition: max-height $menu-animation-delay, transform $menu-animation-delay
+  border: 1px solid black
+
+.expanded
+  max-height: 100vh
+  transform: scaleY(1)
+
+.collapsed
+  max-height: 0
+  transform: scaleY(0)
+
+#mobile-nav
+  height: 100%
+  padding: 10px 20px
+  background-color: rgb(224, 224, 163)
+  text-align: center
+
+#hamburger
+  display: inline-block
+
+#desktop-menu-wrapper
+  display: none
+
+#desktop-nav
+  display: flex
+
+.menu
+  li
+    margin: 0 10px
+  a
+    text-decoration: none
+    color: red
 
 #main-footer
   width: 100%
   min-height: 200px
   background-color: $footer-color
+
+/**
+ * Media queries.
+ */
+@media (min-width: 480px)
+  #title-logo-wrapper
+    span
+      display: inline-block
+
+@media (min-width: 768px)
+  #mobile-menu-wrapper
+    display: none
+
+  #hamburger
+    display: none
+
+  #desktop-menu-wrapper
+    display: initial

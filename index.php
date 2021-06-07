@@ -38,21 +38,44 @@
   <?php wp_head() ?>
 
 </head>
+
 <body>
   <header id="main-header">
-    <h1>
-      <?php bloginfo('name') ?>
-    </h1>
     <?php
+      echo '<div id="title-logo-wrapper"><h1>';
+      bloginfo('name');
+      echo '</h1>';
+
+      if ( function_exists( 'the_custom_logo' ) ) {
+        the_custom_logo();
+      }
+      echo "</div>";
+
       wp_nav_menu([
         'theme_location'        => 'primary_nav',
-        'menu_id'               => 'main-nav',
+        'menu_id'               => 'desktop-nav',
         'menu_class'            => 'menu',
         'container'             => 'nav',
-        'container_class'       => 'menu-wrapper',
+        'container_class'       => 'expanded',
+        'container_id'          => 'desktop-menu-wrapper',
+        'container_aria_label'  => '' //todo: place here some aria label
+      ]);
+
+      wp_nav_menu([
+        'theme_location'        => 'primary_nav',
+        'menu_id'               => 'mobile-nav',
+        'menu_class'            => 'menu',
+        'container'             => 'nav',
+        'container_class'       => 'collapsed',
+        'container_id'          => 'mobile-menu-wrapper',
         'container_aria_label'  => '' //todo: place here some aria label
       ])
     ?>
+    <button id="hamburger" class="hamburger-button">
+      <span class="hamburger-wrapper">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
   </header>
 
   <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
