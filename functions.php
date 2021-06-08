@@ -29,8 +29,8 @@ if (!function_exists('freesia_setup')):
     /**
      * Add custom logo
      */
-    $logo_width  = 300;
-		$logo_height = 100;
+    $logo_width  = 120;
+		$logo_height = 120;
 
 		add_theme_support(
 			'custom-logo',

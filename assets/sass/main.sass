@@ -32,17 +32,18 @@
 @import '_hamburger'
 
 body
-  padding-top: $header-height
+  padding-top: $header-height-small
 
 #main-header
   width: 100%
-  height: $header-height
+  height: $header-height-small
   position: fixed
   top: 0
   display: flex
   justify-content: space-between
   align-items: center
   background-color: $header-color
+  padding: 0 10px
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5)
 
 #title-logo-wrapper
@@ -54,7 +55,8 @@ body
     font-family: $header-font
     font-size: 2em
     margin: 0 10px
-  span
+    text-align: center
+  div
     display: none
     height: 100%
     img
@@ -62,26 +64,27 @@ body
       height: 100%
 
 #mobile-menu-wrapper
-  position: absolute
-  top: $header-height + 10px
+  position: fixed
+  top: $header-height-small + 10px
+  left: 0
   width: 100%
   overflow: auto
-  transition: max-height $menu-animation-delay, transform $menu-animation-delay
-  border: 1px solid black
+  transition: transform $menu-animation-delay
 
 .expanded
-  max-height: 100vh
   transform: scaleY(1)
 
 .collapsed
-  max-height: 0
   transform: scaleY(0)
 
 #mobile-nav
   height: 100%
+  max-width: max-content
   padding: 10px 20px
-  background-color: rgb(224, 224, 163)
+  background-color: $menu-background-color
   text-align: center
+  margin: auto
+  padding: 20px 10%
 
 #hamburger
   display: inline-block
@@ -91,13 +94,22 @@ body
 
 #desktop-nav
   display: flex
+  flex-wrap: wrap
+  justify-content: center
 
 .menu
   li
     margin: 0 10px
+    padding: 5px 0
+
+  li.current_page_item
+    border-bottom: 2px solid $menu-underline-color
+
   a
     text-decoration: none
-    color: red
+    text-transform: uppercase
+    color: $menu-text-color
+    font-family: $menu-font
 
 #main-footer
   width: 100%
@@ -108,11 +120,13 @@ body
  * Media queries.
  */
 @media (min-width: 480px)
-  #title-logo-wrapper
-    span
-      display: inline-block
+  #main-header
+    padding: 0 20px
 
 @media (min-width: 768px)
+  #main-header
+    padding: 0 30px
+
   #mobile-menu-wrapper
     display: none
 
@@ -121,3 +135,14 @@ body
 
   #desktop-menu-wrapper
     display: initial
+
+@media (min-width: 1024px)
+  body
+    padding-top: $header-height-large
+
+  #main-header
+    height: $header-height-large
+
+  #title-logo-wrapper
+    div
+      display: inline-block

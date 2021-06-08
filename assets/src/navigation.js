@@ -21,4 +21,18 @@
  * Javascript file for handling menu 
  */
 
-console.log('javascript works');
+const button = document.getElementById('hamburger');
+const menu = document.getElementById('mobile-menu-wrapper');
+
+button.addEventListener('click', () => {
+  if (button.classList.contains('hamburger-active')) {
+    button.classList.remove('hamburger-active')
+    menu.classList.remove('expanded');
+    menu.classList.remove('expanded');
+    menu.classList.add('collapsed');
+  } else {
+    button.classList.add('hamburger-active');
+    menu.classList.add('expanded');
+    menu.classList.remove('collapsed');
+  }
+})

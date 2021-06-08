@@ -44,12 +44,12 @@
     <?php
       echo '<div id="title-logo-wrapper"><h1>';
       bloginfo('name');
-      echo '</h1>';
+      echo '</h1><div>';
 
       if ( function_exists( 'the_custom_logo' ) ) {
         the_custom_logo();
       }
-      echo "</div>";
+      echo "</div></div>";
 
       wp_nav_menu([
         'theme_location'        => 'primary_nav',
@@ -81,7 +81,6 @@
   <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
     <p><?php the_title() ?></p>
     <p><?php the_content() ?></p>
-    <hr>
   <?php endwhile; else: ?>
     <p>there is empty here</p>
   <?php endif; ?>
