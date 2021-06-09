@@ -18,25 +18,35 @@
  * Contact me: dneldik@gmail.com
  * 
  * ---
- * Variable file for all style sheets
+ * The content stylesheet file
+ *
+ * Media Query breakpoints
+ *
+ * <  480px
+ * >= 480px
+ * >= 600px
+ * >= 768px
+ * >= 1024px
  */
+@import '_var'
 
-// Variables:
-$header-color: #f8f8f8
-$footer-color: #343941
-$hamburger-color: #3a3c3f
-$menu-text-color: #3a3c3f
-$menu-background-color: rgb(224, 224, 163)
-$menu-underline-color: rgb(182, 182, 71)
+#main-content-wrapper
+  padding: 2% 5%
+  text-align: center
+  min-height: calc(100vh - #{$header-height-small})
+  font-family: $content-font
 
-$header-height-small: 80px
-$header-height-large: 120px
+figure
+  height: 100%
 
-$header-font: arial
-$menu-font: arial
-$content-font: arial
+  img
+    width: 100%
+    height: auto
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
 
-$header-font-size-normal: 2rem
-$header-font-size-big: 2.5rem
-
-$menu-animation-delay: 0.3s
+@media (min-width: 1024px)
+  #main-content-wrapper
+    padding: 4% 8%
+    min-height: calc(100vh - #{$header-height-large})

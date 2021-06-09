@@ -1,3 +1,4 @@
+<?php
 /**
  * Freesia - simple and light Wordpress theme.
  * Copyright (C) 2021 dneldik
@@ -18,25 +19,13 @@
  * Contact me: dneldik@gmail.com
  * 
  * ---
- * Variable file for all style sheets
+ * The footer template file
  */
+?>
 
-// Variables:
-$header-color: #f8f8f8
-$footer-color: #343941
-$hamburger-color: #3a3c3f
-$menu-text-color: #3a3c3f
-$menu-background-color: rgb(224, 224, 163)
-$menu-underline-color: rgb(182, 182, 71)
-
-$header-height-small: 80px
-$header-height-large: 120px
-
-$header-font: arial
-$menu-font: arial
-$content-font: arial
-
-$header-font-size-normal: 2rem
-$header-font-size-big: 2.5rem
-
-$menu-animation-delay: 0.3s
+<footer id="main-footer">
+  <?php wp_footer() ?>
+</footer>
+  
+</body>
+</html>

@@ -39,7 +39,7 @@ if (!function_exists('freesia_setup')):
 				'width'                => $logo_width,
 				'flex-width'           => true,
 				'flex-height'          => true,
-				'unlink-homepage-logo' => true,
+				'unlink-homepage-logo' => true
       ]
 		);
 

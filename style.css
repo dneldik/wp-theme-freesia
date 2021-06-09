@@ -27,7 +27,8 @@ nav,
 div,
 h1,
 ul,
-button {
+button,
+figure {
   margin: 0;
   padding: 0;
   border: 0;
