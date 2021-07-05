@@ -19,15 +19,25 @@
  * Contact me: dneldik@gmail.com
  * 
  * ---
- * The main template file
+ * Home page template file
  */
 ?>
 
 <?php get_header() ?>
 
-<div id="main-content-wrapper">
-  <?php get_template_part('content') ?>
-</div>
+  <div id="main-content-wrapper">
+
+    <article class="freesia-article">
+
+      <?php get_template_part('content') ?>
+
+      <?php if( is_active_sidebar( 'front-page-sidebar' ) ): ?>
+        <?php get_sidebar('main') ?>
+      <?php endif; ?>
+
+    </article>
+
+  </div>
 
 </main>
 

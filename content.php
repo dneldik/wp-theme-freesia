@@ -24,9 +24,13 @@
 ?>
 
 <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
-  <div id="main-content-wrapper">
+  
+  <section class="freesia-content">
     <?php the_content() ?>
-  </div>
+  </section>
+
 <?php endwhile; else: ?>
+
   <p>there is empty here</p>
+  
 <?php endif; ?>

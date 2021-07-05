@@ -30,10 +30,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory') ?>/'style.css'">
-  <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory') ?>/assets/css/'main.css'">
-  <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory') ?>/assets/css/'content.css'">
-
   <title><?php the_title() ?></title>
 
   <?php wp_head() ?>
@@ -41,6 +37,9 @@
 </head>
 
 <body>
+
+<main>
+
   <header id="main-header">
     <?php
       echo '<div id="title-logo-wrapper"><h1>';
@@ -52,29 +51,36 @@
       }
       echo "</div></div>";
 
-      wp_nav_menu([
-        'theme_location'        => 'primary_nav',
-        'menu_id'               => 'desktop-nav',
-        'menu_class'            => 'menu',
-        'container'             => 'nav',
-        'container_class'       => 'expanded',
-        'container_id'          => 'desktop-menu-wrapper',
-        'container_aria_label'  => '' //todo: place here some aria label
-      ]);
+      if ( has_nav_menu( 'primary_nav' ) ) {
+        wp_nav_menu([
+          'theme_location'        => 'primary_nav',
+          'menu_id'               => 'desktop-nav',
+          'menu_class'            => 'menu',
+          'container'             => 'nav',
+          'container_class'       => 'expanded',
+          'container_id'          => 'desktop-menu-wrapper',
+          'container_aria_label'  => '' //todo: place here some aria label
+        ]);
+        wp_nav_menu([
+          'theme_location'        => 'primary_nav',
+          'menu_id'               => 'mobile-nav',
+          'menu_class'            => 'menu',
+          'container'             => 'nav',
+          'container_class'       => 'collapsed',
+          'container_id'          => 'mobile-menu-wrapper',
+          'container_aria_label'  => '' //todo: place here some aria label
+        ]);
+      }
 
-      wp_nav_menu([
-        'theme_location'        => 'primary_nav',
-        'menu_id'               => 'mobile-nav',
-        'menu_class'            => 'menu',
-        'container'             => 'nav',
-        'container_class'       => 'collapsed',
-        'container_id'          => 'mobile-menu-wrapper',
-        'container_aria_label'  => '' //todo: place here some aria label
-      ])
     ?>
+
+    <?php if ( has_nav_menu( 'primary_nav' ) ) : ?>
+
     <button id="hamburger" class="hamburger-button">
       <span class="hamburger-wrapper">
         <span class="hamburger-inner"></span>
       </span>
     </button>
+
+    <?php endif; ?>
   </header>

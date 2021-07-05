@@ -1,0 +1,97 @@
+/**
+ * Freesia - simple and light Wordpress theme.
+ * Copyright (C) 2021 dneldik
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ * Contact me: dneldik@gmail.com
+ * 
+ * ---
+ * The frontpage stylesheet file
+ *
+ * Media Query breakpoints
+ *
+ * <  480px
+ * >= 480px
+ * >= 600px
+ * >= 768px
+ * >= 1024px
+ */
+
+.freesia-article
+  display: flex
+  flex-direction: column
+
+.freesia-content,
+.freesia-widget-area
+  position: relative
+
+.freesia-content
+  padding: 2% 5%
+
+.front-page-widget
+  position: relative
+  margin: 20px 10px
+
+.freesia-widget-background1
+  position: absolute
+  z-index: -999
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+
+  background-color: #eeb996 //Temporary
+
+.freesia-widget-background2
+  position: absolute
+  z-index: -999
+  width: 100%
+  height: 100%
+  display: none
+
+/**
+ * Media queries.
+ */
+@media (min-width: 768px)
+  .freesia-article
+    justify-content: center
+    flex-direction: row
+
+  .freesia-content,
+  .freesia-widget-area
+    flex-grow: 1
+    width: 100%
+    margin: 0 5px
+
+  .freesia-content
+    padding: 4% 0
+
+  .front-page-widget
+    margin: 0
+
+  .freesia-widget-wrapper
+    position: relative
+    top: 10%
+
+  .freesia-widget-background1
+    width: 100%
+    left: -20%
+    height: 120%
+
+  .freesia-widget-background2
+    display: initial
+    top: -25%
+
+    background-color: #f7ec8a //Temporary

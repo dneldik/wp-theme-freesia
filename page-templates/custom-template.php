@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Empty template
+ * 
  * Freesia - simple and light Wordpress theme.
  * Copyright (C) 2021 dneldik
  *
@@ -19,16 +21,18 @@
  * Contact me: dneldik@gmail.com
  * 
  * ---
- * The main template file
+ * Empty template for further development
  */
 ?>
 
 <?php get_header() ?>
 
-<div id="main-content-wrapper">
+<div style="background-color: lightblue">
   <?php get_template_part('content') ?>
 </div>
 
 </main>
 
 <?php get_footer() ?>
+
+

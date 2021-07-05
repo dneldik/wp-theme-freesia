@@ -31,22 +31,16 @@
 @import '_var'
 
 #main-content-wrapper
-  padding: 2% 5%
   text-align: center
-  min-height: calc(100vh - #{$header-height-small})
+  min-height: calc(100vh - #{$header-height-small} - #{$footer-height})
   font-family: $content-font
+  overflow: hidden
 
-figure
-  height: 100%
-
-  img
-    width: 100%
-    height: auto
-    position: relative
-    top: 50%
-    transform: translateY(-50%)
+@media (min-width: 768px)
+  #main-content-wrapper
+    padding: 0 5%
 
 @media (min-width: 1024px)
   #main-content-wrapper
-    padding: 4% 8%
-    min-height: calc(100vh - #{$header-height-large})
+    padding: 0 8%
+    min-height: calc(100vh - #{$header-height-large} - #{$footer-height})

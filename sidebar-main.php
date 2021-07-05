@@ -19,16 +19,16 @@
  * Contact me: dneldik@gmail.com
  * 
  * ---
- * The main template file
+ * The sidebar-main file - container for home page widgets
  */
 ?>
 
-<?php get_header() ?>
+<aside class="freesia-widget-area">
 
-<div id="main-content-wrapper">
-  <?php get_template_part('content') ?>
-</div>
+  <div class="freesia-widget-wrapper">
+    <span class="freesia-widget-background2"></span>
+    <span class="freesia-widget-background1"></span>
+    <?php dynamic_sidebar( 'front-page-sidebar' ) ?>
+  </div>
 
-</main>
-
-<?php get_footer() ?>
+</aside>

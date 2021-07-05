@@ -71,3 +71,39 @@ function freesia_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'freesia_scripts' );
+
+/**
+ * Register widgets areas
+ */
+function freesia_register_sidebars() {
+  register_sidebar([
+    'id'            =>  'front-page-sidebar',
+    'name'          =>  'Front page sidebar',
+    'description'   =>  'Please add some additional information here',
+    'before_widget' =>  '<div class="front-page-widget widget-area">',
+    'after_widget'  =>  '</div>'
+  ]);
+}
+
+add_action( 'widgets_init', 'freesia_register_sidebars' );
+
+/**
+ * Add basic stylesheets
+ */
+function freesia_basic_styles() {
+  wp_enqueue_style( 'style', get_template_directory_uri().'/style.css', false, '1.1', 'all');
+  wp_enqueue_style( 'main', get_template_directory_uri().'/assets/css/main.css', false, '1.1', 'all');
+  wp_enqueue_style( 'content', get_template_directory_uri().'/assets/css/content.css', false, '1.1', 'all');
+}
+add_action( 'wp_enqueue_scripts', 'freesia_basic_styles' );
+
+/**
+ * Add stylesheets depending on the page 
+ */
+function freesia_front_page_styles() {
+  if(is_front_page()) {
+    wp_enqueue_style( 'frontpage', get_template_directory_uri().'/assets/css/frontpage.css', false, '1.1', 'all');
+  }
+}
+
+add_action( 'wp_enqueue_scripts', 'freesia_front_page_styles');
