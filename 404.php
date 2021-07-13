@@ -19,7 +19,7 @@
  * Contact me: dneldik@gmail.com
  * 
  * ---
- * The main template file
+ * The 404 template file
  */
 ?>
 
@@ -28,7 +28,14 @@
 <main>
 
 <div id="main-content-wrapper">
-  <?php get_template_part('content') ?>
+  <div id="404">
+    <h3 id="404-header">
+      Error 404.
+    </h3>
+    <p id="404-message">
+      The page you are looking for does not exist.
+    </p>
+  </div>
 </div>
 
 </main>

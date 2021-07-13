@@ -25,6 +25,8 @@
 
 <?php get_header() ?>
 
+<main>
+
   <div id="main-content-wrapper">
 
     <article class="freesia-article">
@@ -38,6 +40,14 @@
     </article>
 
   </div>
+
+  <?php if( is_active_sidebar( 'front-page-widget1' ) ): ?>
+    <?php get_sidebar('front1') ?>
+  <?php endif; ?>
+
+  <?php if( is_active_sidebar( 'front-page-widget2' ) ): ?>
+    <?php get_sidebar('front2') ?>
+  <?php endif; ?>
 
 </main>
 

@@ -80,7 +80,47 @@ function freesia_register_sidebars() {
     'id'            =>  'front-page-sidebar',
     'name'          =>  'Front page sidebar',
     'description'   =>  'Please add some additional information here',
-    'before_widget' =>  '<div class="front-page-widget widget-area">',
+    'before_widget' =>  '<div class="front-page-widget">',
+    'after_widget'  =>  '</div>'
+  ]);
+
+  register_sidebar([
+    'id'            =>  'front-page-widget1',
+    'name'          =>  'Front page widget 1',
+    'description'   =>  'Please add some additional content here',
+    'before_widget' =>  '<div class="widget-area">',
+    'after_widget'  =>  '</div>'
+  ]);
+
+  register_sidebar([
+    'id'            =>  'front-page-widget2',
+    'name'          =>  'Front page widget 2',
+    'description'   =>  'Please add some additional content here',
+    'before_widget' =>  '<div class="widget-area">',
+    'after_widget'  =>  '</div>'
+  ]);
+
+  register_sidebar([
+    'id'            =>  'footer-sidebar-left',
+    'name'          =>  'Footer widget left',
+    'description'   =>  'Please add your footer information here',
+    'before_widget' =>  '<div class="footer-widget">',
+    'after_widget'  =>  '</div>'
+  ]);
+
+  register_sidebar([
+    'id'            =>  'footer-sidebar-middle',
+    'name'          =>  'Footer widget middle',
+    'description'   =>  'Please add your footer information here',
+    'before_widget' =>  '<div class="footer-widget">',
+    'after_widget'  =>  '</div>'
+  ]);
+
+  register_sidebar([
+    'id'            =>  'footer-sidebar-right',
+    'name'          =>  'Footer widget right',
+    'description'   =>  'Please add your footer information here',
+    'before_widget' =>  '<div class="footer-widget">',
     'after_widget'  =>  '</div>'
   ]);
 }
@@ -94,6 +134,7 @@ function freesia_basic_styles() {
   wp_enqueue_style( 'style', get_template_directory_uri().'/style.css', false, '1.1', 'all');
   wp_enqueue_style( 'main', get_template_directory_uri().'/assets/css/main.css', false, '1.1', 'all');
   wp_enqueue_style( 'content', get_template_directory_uri().'/assets/css/content.css', false, '1.1', 'all');
+  wp_enqueue_style( 'footer', get_template_directory_uri().'/assets/css/footer.css', false, '1.1', 'all');
 }
 add_action( 'wp_enqueue_scripts', 'freesia_basic_styles' );
 

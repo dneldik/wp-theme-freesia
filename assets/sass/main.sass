@@ -34,6 +34,9 @@
 body
   padding-top: $header-height-small
 
+main
+  min-height: calc(100vh - #{$header-height-small} - #{$footer-min-height} - #{1px})
+
 #main-header
   width: 100%
   height: $header-height-small
@@ -112,11 +115,6 @@ body
     color: $menu-text-color
     font-family: $menu-font
 
-#main-footer
-  width: 100%
-  min-height: $footer-height
-  background-color: $footer-color
-
 /**
  * Media queries.
  */
@@ -140,6 +138,9 @@ body
 @media (min-width: 1024px)
   body
     padding-top: $header-height-large
+
+  main
+    min-height: calc(100vh - #{$header-height-large} - #{$footer-min-height} - #{1px})
 
   #main-header
     height: $header-height-large

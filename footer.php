@@ -24,6 +24,7 @@
 ?>
 
 <footer id="main-footer">
+  <?php get_sidebar('footer') ?>
   <?php wp_footer() ?>
 </footer>
   

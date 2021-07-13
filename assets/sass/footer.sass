@@ -1,4 +1,3 @@
-<?php
 /**
  * Freesia - simple and light Wordpress theme.
  * Copyright (C) 2021 dneldik
@@ -19,18 +18,39 @@
  * Contact me: dneldik@gmail.com
  * 
  * ---
- * The main template file
+ * The footer stylesheet file
+ *
+ * Media Query breakpoints
+ *
+ * <  480px
+ * >= 480px
+ * >= 600px
+ * >= 768px
+ * >= 1024px
  */
-?>
 
-<?php get_header() ?>
+@import '_var'
 
-<main>
+#main-footer
+  width: 100%
+  background-color: $footer-color
+  min-height: $footer-min-height
+  padding: 10px 0
+  overflow: hidden
 
-<div id="main-content-wrapper">
-  <?php get_template_part('content') ?>
-</div>
+#freesia-footer-widgets
+  display: flex
+  justify-content: space-around
+  align-items: center
+  flex-direction: column
+  color: $footer-text-color
+  max-width: $footer-content-max-width
+  margin: auto
 
-</main>
+.footer-widget
+  margin: 2px 5px 15px 5px
 
-<?php get_footer() ?>
+@media (min-width: 480px)
+  #freesia-footer-widgets
+    align-items: start
+    flex-direction: row

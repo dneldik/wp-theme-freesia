@@ -19,18 +19,22 @@
  * Contact me: dneldik@gmail.com
  * 
  * ---
- * The main template file
+ * The sidebar-footer file - container for footer widgets
  */
 ?>
 
-<?php get_header() ?>
+<aside id="freesia-footer-widgets">
 
-<main>
+  <?php if( is_active_sidebar( 'footer-sidebar-left' ) ): ?>
+    <?php dynamic_sidebar( 'footer-sidebar-left' ) ?>
+  <?php endif; ?>
 
-<div id="main-content-wrapper">
-  <?php get_template_part('content') ?>
-</div>
+  <?php if( is_active_sidebar( 'footer-sidebar-middle' ) ): ?>
+    <?php dynamic_sidebar( 'footer-sidebar-middle' ) ?>
+  <?php endif; ?>
 
-</main>
+  <?php if( is_active_sidebar( 'footer-sidebar-right' ) ): ?>
+    <?php dynamic_sidebar( 'footer-sidebar-right' ) ?>
+  <?php endif; ?>
 
-<?php get_footer() ?>
+</aside>

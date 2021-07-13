@@ -38,7 +38,7 @@
 
 <body>
 
-<main>
+  <div id="wptime-plugin-preloader"></div>
 
   <header id="main-header">
     <?php
